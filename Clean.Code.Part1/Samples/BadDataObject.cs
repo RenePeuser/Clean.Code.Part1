@@ -1,6 +1,4 @@
 ﻿#pragma warning disable CS8618
-using Newtonsoft.Json.Linq;
-
 namespace Clean.Code.Part1.Samples
 {
     public class ObjectA
@@ -14,8 +12,9 @@ namespace Clean.Code.Part1.Samples
             PropertyA = propertyA;
         }
 
-        public string PropertyA { get; set; } 
-        public string PropertyB { get; set; } 
+        public string PropertyA { get; set; }
+
+        public string PropertyB { get; set; }
 
         // Problems:
         // - CTOR kicks higlander principle -> it can be only 1 ctor method which sets the state of the object
@@ -28,7 +27,7 @@ namespace Clean.Code.Part1.Samples
         {
             return new ObjectB()
             {
-                PropertyA = PropertyB, 
+                PropertyA = PropertyB,
                 PropertyB = PropertyA
             };
         }

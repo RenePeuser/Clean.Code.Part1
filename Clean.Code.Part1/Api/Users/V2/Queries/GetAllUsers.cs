@@ -3,9 +3,9 @@ using AspNetCore.Simple.Sdk.Mediator;
 
 namespace Clean.Code.Part1.Api.Users.V2
 {
-    internal record GetAllUsers : IQuery<GetAllUsersResponse>;
+    internal sealed record GetAllUsers : IQuery<GetAllUsersResponse>;
 
-    internal class GetAllUsersHandler : IQueryHandler<GetAllUsers, GetAllUsersResponse>
+    internal sealed class GetAllUsersHandler : IQueryHandler<GetAllUsers, GetAllUsersResponse>
     {
         public Task<GetAllUsersResponse> Handle(GetAllUsers request, CancellationToken cancellationToken)
         {

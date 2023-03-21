@@ -1,5 +1,4 @@
-﻿using AspNetCore.Simple.Sdk.Mediator;
-using Clean.Code.Part1.Api.Configuration.V1.Settings;
+﻿using Clean.Code.Part1.Api.Configuration.V1.Settings;
 
 namespace Clean.Code.Part1.Api.Configuration.V1
 {

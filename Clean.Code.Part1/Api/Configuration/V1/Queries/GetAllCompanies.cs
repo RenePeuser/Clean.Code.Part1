@@ -4,11 +4,11 @@ using Clean.Code.Part1.Api.Configuration.V1.Settings;
 
 namespace Clean.Code.Part1.Api.Configuration.V1
 {
-    public record GetAllCompaniesResponse(IImmutableList<string> Companies);
+    public sealed record GetAllCompaniesResponse(IImmutableList<string> Companies);
 
-    internal record GetAllCompanies : IQuery<GetAllCompaniesResponse>;
+    internal sealed record GetAllCompanies : IQuery<GetAllCompaniesResponse>;
 
-    internal class GetAllCompaniesHandler : IQueryHandler<GetAllCompanies, GetAllCompaniesResponse>
+    internal sealed class GetAllCompaniesHandler : IQueryHandler<GetAllCompanies, GetAllCompaniesResponse>
     {
         private readonly NavisionSettings _navisionSettings;
 
