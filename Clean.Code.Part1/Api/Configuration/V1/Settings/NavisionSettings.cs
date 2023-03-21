@@ -16,9 +16,8 @@ namespace Clean.Code.Part1.Api.Configuration.V1.Settings
 
             // org value is separted with ";"
             var companiesAsString = configuration.GetSection("NavisionSettings:Companies").Value;
-            var companiesAsArray = companiesAsString.Split(";");
 
-
+            var companiesAsArray = companiesAsString.IsNull() ? Array.Empty<string>() : companiesAsString.Split(";");
             var navisionSettings = new NavisionSettings()
             {
                 Companies = companiesAsArray.ToImmutableList()
@@ -29,35 +28,9 @@ namespace Clean.Code.Part1.Api.Configuration.V1.Settings
     }
 
 
+    // This is what we want
     public record NavisionSettings
     {
-        public IImmutableList<string> Companies { get; init; }
-    }
-
-
-    // What we do not have in our code :)
-    // Data classes which knows how to transform values
-    public record NavisionSettingsBadPractice
-    {
-        private string _companiesAsString;
-
-        public string CompaniesAsStringAsString
-        {
-            // Mixing => and {} in 1 scope not nice to read
-            get
-            {
-                return _companiesAsString;
-            }
-
-            set
-            {
-                if (_companiesAsString.NotEqualsTo(value))
-                {
-                    Companies = _companiesAsString.Split(";").ToImmutableList();
-                }
-            }
-        }
-
-        public IImmutableList<string> Companies { get; private set; }
+        public IImmutableList<string> Companies { get; init; } = ImmutableList<string>.Empty;
     }
 }
