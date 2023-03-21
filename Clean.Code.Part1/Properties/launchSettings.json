@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "Dev": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "api/clean-code/swagger",
+      "applicationUrl": "https://localhost:7063;http://localhost:5075",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
