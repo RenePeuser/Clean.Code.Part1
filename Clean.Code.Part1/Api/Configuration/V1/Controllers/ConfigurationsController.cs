@@ -1,4 +1,4 @@
-using AspNetCore.Simple.Sdk.Mediator;
+﻿using AspNetCore.Simple.Sdk.Mediator;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
