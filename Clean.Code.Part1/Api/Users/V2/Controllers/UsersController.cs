@@ -29,11 +29,5 @@ namespace Clean.Code.Part1.Api.Users.V2
         {
             return _mediator.SendAsync(new GetAllUsers(), cancellationToken);
         }
-
-        [HttpPost]
-        public Task<GetAllUsersResponse> AddUserAsync(User user, CancellationToken cancellationToken)
-        {
-            return _mediator.SendAsync(new GetAllUsers(), cancellationToken);
-        }
     }
 }
